@@ -124,7 +124,7 @@ function renderMine() {
 
 function renderCheckout() {
   const amount = state.cartTotal; const fee = state.deliveryType === '到店自取' || amount >= 30 ? 0 : 3;
-  const coupons = getCoupons().filter(coupon => !coupon.used); const selected = coupons.find(c => c.id === state.selectedCouponId && amount >= c.minSpend); const discount = selected ? Math.min(selected.amount, amount) : 0;
+  const coupons = getCoupons().filter(coupon => !coupon.used); const selected = coupons.find(c => c.id === state.selectedCouponId && amount >= Number(c.minSpend || 0)); if (state.selectedCouponId && !selected) state.selectedCouponId = ''; const discount = selected ? Math.min(Number(selected.amount || 0), amount) : 0;
   const addresses = getAddresses(); const address = addresses.find(item => item.id === (state.addressId || read(KEYS.defaultAddress, ''))) || addresses[0] || null;
   state.checkoutAddress = address; state.deliveryFee = fee; state.discount = discount; state.payable = Math.max(0, amount + fee - discount);
   const pickup = state.deliveryType === '到店自取';
@@ -277,7 +277,7 @@ document.addEventListener('click', async event => {
       if (!totals().count) { toast('购物车为空'); return; }
       if (state.deliveryType !== '到店自取' && !state.checkoutAddress) { toast('请先添加收货地址'); state.params.select = true; transitionView('addresses', { select: true }); return; }
       if (!confirmAction(`确认支付，应付金额 ¥${fmt(state.payable)}（本地模拟支付）？`)) return;
-      const selected = getCoupons().find(item => item.id === state.selectedCouponId && !item.used);
+      const selected = getCoupons().find(item => item.id === state.selectedCouponId && !item.used && state.cartTotal >= Number(item.minSpend || 0));
       const order = { id: 'O' + Date.now(), items: totals().lines.map(([key,item]) => ({ ...item, id:key, total:item.price*item.count })), totalPrice:state.payable, goodsPrice:state.cartTotal, deliveryFee:state.deliveryFee, discountAmount:state.discount, coupon:selected?{ id:selected.id,title:selected.title,amount:state.discount }:null, address:state.deliveryType === '到店自取'?null:{...state.checkoutAddress}, deliveryType:state.deliveryType, remark:$('#remarkInput')?.value.trim() || '', createTime:new Date().toLocaleString('zh-CN',{hour12:false}), createdAt:Date.now(), status:'待制作' };
       if (selected) { selected.used = true; write(KEYS.coupons, getCoupons().map(item => item.id === selected.id ? selected : item)); }
       persistOrder(order); state.cart = {}; write(KEYS.cart, {}); state.selectedCouponId = ''; transitionView('orders'); toast('支付成功（演示）');
