@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f5ef">
+  <meta name="description" content="茶语东方茶饮，挑一杯喜欢的茶，慢慢享用。">
+  <title>茶语 · 东方茶饮</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar"><div class="brand-mark">茶<span>·</span></div><div><strong>茶语</strong><small>★ 4.9　月售 2381　约 30 分钟</small></div><button class="icon-button" id="shareBtn" aria-label="分享">›</button></header>
+    <main id="mainView"></main>
+    <nav class="bottom-nav" aria-label="主导航">
+      <button data-view="menu" class="active">点餐</button>
+      <button data-view="orders">订单</button>
+      <button data-view="profile">我的</button>
+    </nav>
+  </div>
+  <div id="overlayRoot"></div>
+  <div id="toast" role="status"></div>
+  <script src="./menu-data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
