@@ -19,3 +19,7 @@ GitHub Pages 会生成 HTTPS 网址；将该网址发给好友即可打开。网
 - 订单、购物车和称呼信息保存在当前设备的浏览器 `localStorage`。
 - 当前没有真实支付、云端同步、店员收单和跨设备共享；网页订单只用于演示。
 - 菜单快照来自小程序的 `utils/menu.js`。修改小程序菜单后，需要同步更新 `menu-data.js`。
+
+## 在线体验
+
+GitHub Pages 发布完成后，可通过 https://lwhshexi.github.io/tea-order-h5/ 访问。
