@@ -11,6 +11,7 @@ body{background:#f7f5ef;color:#252c24}.app-shell{width:100%;max-width:560px;heig
 .existing-good-image{display:flex;align-items:center;gap:10px;margin-top:8px}.existing-good-image button{border:0;background:none;color:#a16b5a;font-size:10px}
 
 .delivery-switch{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 12px 4px;padding:4px;background:#eeefe9;border-radius:10px}
+.bottom-nav[hidden]{display:none!important}
 .delivery-switch button{min-height:48px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border:1px solid transparent;border-radius:8px;background:transparent;color:#7c8379}
 .delivery-switch button b{font-size:12px}.delivery-switch button small{font-size:9px;color:#9da197}
 .delivery-switch button.active{border-color:#dfe7dc;background:#fff;color:#315543;box-shadow:0 2px 6px #26352b0d}
