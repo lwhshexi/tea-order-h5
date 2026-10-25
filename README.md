@@ -14,6 +14,7 @@ GitHub Pages 会生成 HTTPS 网址；将该网址发给好友即可打开。网
 
 ## 页面和功能
 
+
 - 点餐首页、搜索分类、商品详情、规格选择和购物车。
 - 结算、外卖配送/到店自取、地址簿、优惠券及领券中心。
 - 订单列表、订单详情、自动状态流转、取消、删除和再来一单。
@@ -22,3 +23,13 @@ GitHub Pages 会生成 HTTPS 网址；将该网址发给好友即可打开。网
 - 商品、购物车、订单、优惠券和资料保存在当前设备浏览器的 `localStorage`。上传的头像和商品图片会压缩后保存在本机。网页不会与小程序或其他好友设备同步，也没有真实支付和云端店员收单。
 - 菜单初始数据来自小程序的 `utils/menu.js`。修改小程序菜单后，需要同步更新 `menu-data.js`。
 
+TheodociaNorthrip02163@outlook.com----qrdfar06689
+QueenieGivins995990@outlook.com----lvvtez63114
+KacieIbarguen79969@outlook.com----olasff664971
+TerellLupino539661@outlook.com----mbvlyy01921
+AstridGoldinger43269@outlook.com----ffsev421209
+KimberlyCarrethers21973@outlook.com----ijens690746
+JosephRosebud183279@outlook.com----lgxki95165
+TrumanUmstead921141@outlook.com----kmocnh231805
+RexfordRagaglia863694@outlook.com----jqfwk665190
+AnayaBergevin780725@outlook.com----vpcssx885726
